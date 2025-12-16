@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLiDE Workshop @ LREC 2026</title>
+    <style>
+        /* Basic Academic Style Reset */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #F9F9F9; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        /* Header */
+        header { border-bottom: 2px solid #0056B3; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { color: #0056B3; margin-bottom: 5px; }
+        .subtitle { font-size: 1.2em; color: #555; font-weight: bold; }
+        .meta { color: #666; font-style: italic; }
+        /* Navigation */
+        nav { background: #eee; padding: 10px; border-radius: 5px; margin-bottom: 30px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #0056B3; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        /* Content Sections */
+        section { margin-bottom: 40px; }
+        h2 { border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #444; margin-top: 0; }
+        h3 { color: #555; margin-top: 25px; }
+        ul { margin-top: 5px; }
+        li { margin-bottom: 5px; }
+        /* Dates Table */
+        .dates-box { background: #EEF7FF; padding: 20px; border-left: 5px solid #0056B3; margin: 20px 0; }
+        .date-item { display: flex; justify-content: space-between; border-bottom: 1px solid #CCE5FF; padding: 8px 0; }
+        .date-item:last-child { border-bottom: none; }
+        .date-bold { font-weight: bold; }
+        /* Lists */
+        .topics-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .topics-grid { grid-template-columns: 1fr 1fr; } }
+        .people-list { font-size: 0.9em; columns: 2; -webkit-columns: 2; -moz-columns: 2; }
+        @media (max-width: 600px) { .people-list { columns: 1; } }
+        /* Button */
+        .btn { display: inline-block; background: #0056B3; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+        .btn:hover { background: #004494; }
+        footer { text-align: center; font-size: 0.8em; color: #888; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Workshop on Structured Linguistic Data and Evaluation (SLiDE)</h1>
+        <div class="subtitle">A full-day workshop at LREC 2026</div>
+        <div class="meta">11-16 May 2026 | Palma, Mallorca (Spain)</div>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#dates">Important Dates</a>
+        <a href="#submission">Submission</a>
+        <a href="#organizers">Organizers</a>
+    </nav>
+    <section id="about">
+        <h2>Call For Papers</h2>
+        <p>In the last ten years, significant advances in deep learning models and the development of Large Language Models (LLMs) have revolutionized the fields of computational linguistics (CL) and natural language processing (NLP). In turn, this has led to a complete re-assessment of the language resources and evaluation practices necessary for training LLMs and analyzing their outputs.</p>
+        <p>In particular, the availability of very large amounts of unstructured data for training foundational models has come into focus, while the value of high-quality structured linguistic data with rich annotations at various levels of linguistic analysis has been downplayed by comparison. However, as CL and NLP practitioners engage further with LLMs and debate their strengths and weaknesses, the importance of high-quality, structured linguistic data has been re-emphasized.</p>
+        <p>The proposed workshop can be seen as related to the Treebanks and Linguistic Theories (TLT) conference series and the more recent SyntaxFest venue. The Workshop on Structured Linguistic Data is conceived as both a continuation of this tradition and an adaptation to the new realities of an LLM-dominated research landscape.</p>
+    </section>
+    <section id="topics">
+        <h2>Topics of Interest</h2>
+        <p>Topics include but are not limited to:</p>
+        <div class="topics-grid">
+            <div>
+                <h3>Linguistic Data & Evaluation</h3>
+                <ul>
+                    <li>Grammar processing with NLP and LLM-based tools</li>
+                    <li>Phonological and morphological analysis and LLM tokenization</li>
+                    <li>Annotation strategies with LLM-empowered methodologies</li>
+                    <li>Design principles and annotation schemes</li>
+                    <li>Multi-lingual and cross-lingual settings</li>
+                    <li>Language resources for underresourced languages</li>
+                    <li>(Semi-)automatic methods for creating structured linguistic data</li>
+                </ul>
+                <h3>Spoken Language & Multimodality</h3>
+                <ul>
+                    <li>Speech-to-text, Generation, and Curation</li>
+                    <li>Structured multimodal resources: gesture AMR (GAMR), gaze, posture</li>
+                    <li>Multimodal grounding and alignment</li>
+                    <li>Multimodal evaluation resources for LLMs</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Pragmatics & Semantics</h3>
+                <ul>
+                    <li>Structured data for discourse: coherence, dialogue acts</li>
+                    <li>Pragmatic annotation: speech acts, politeness, stance</li>
+                    <li>Theory of Mind in LLMs</li>
+                    <li>Dependency analysis and semantic parsing</li>
+                    <li>Abstract Meaning Representation (AMR), UMR, MRS, TTR</li>
+                    <li>Distributional and neural-symbolic representations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="speakers">
+        <h2>Invited Speakers</h2>
+        <ul>
+            <li><strong>Naiara Perez</strong> (University of the Basque Country)</li>
+            <li><strong>Shira Wein</strong> (Amherst College)</li>
+        </ul>
+    </section>
+    <section id="dates">
+        <h2>Important Dates</h2>
+        <div class="dates-box">
+            <div class="date-item"><span>Paper submission deadline</span> <span class="date-bold">February 22, 2026</span></div>
+            <div class="date-item"><span>Notification of acceptance</span> <span class="date-bold">March 15, 2026</span></div>
+            <div class="date-item"><span>Camera-ready papers</span> <span class="date-bold">March 25, 2026</span></div>
+            <div class="date-item"><span>Workshop at LREC 2026</span> <span class="date-bold">May 2026</span></div>
+            <div style="margin-top:10px; font-size: 0.9em; font-style: italic;">All deadlines are 11.59 pm UTC -12h ("anywhere on Earth").</div>
+        </div>
+    </section>
+    <section id="submission">
+        <h2>Submission Instructions</h2>
+        <p>We invite paper submissions in two distinct tracks:</p>
+        <ul>
+            <li><strong>Regular papers:</strong> 6 to 8 pages excluding references.</li>
+            <li><strong>Short papers:</strong> 4 to 6 pages excluding references.</li>
+        </ul>
+        <p>Submission follows the LREC 2026 conference instructions. Papers must be anonymized.</p>
+        <a href="https://softconf.com/lrec2026/main" class="btn">Submit via Softconf START</a>
+    </section>
+    <section id="organizers">
+        <h2>Workshop Organizers</h2>
+        <ul>
+            <li>Jan Hajič (Prague University, Czech Republic)</li>
+            <li>Erhard Hinrichs (Tübingen University, Germany)</li>
+            <li>Sandra Kübler (Indiana University, USA)</li>
+            <li>Joakim Nivre (Uppsala University, Sweden)</li>
+            <li>Petya Osenova (Sofia University, Bulgaria)</li>
+            <li>James Pustejovsky (Brandeis University, USA)</li>
+        </ul>
+    </section>
+    <section id="pc">
+        <h2>Programme Committee</h2>
+        <div class="people-list">
+            <ul>
+                <li>Bernd Bohnet, Google, London, UK</li>
+                <li>Claire Bonial, U.S. Army DEVCOM ARL, USA</li>
+                <li>Johan Bos, Rijksuniversiteit Groningen, NL</li>
+                <li>Gosse Bouma, Rijksuniversiteit Groningen, NL</li>
+                <li>Çağrı Çöltekin, Tübingen University, Germany</li>
+                <li>Daniel Dakota, Leidos, Indiana University, USA</li>
+                <li>Miryam de Lhoneux, KU Leuven, Belgium</li>
+                <li>Stephanie Dipper, Bochum University, Germany</li>
+                <li>Katrin Erk, UMass Amherst, USA</li>
+                <li>Kilian Evang, Düsseldorf University, Germany</li>
+                <li>Kim Gerdes, Université Paris-Saclay, France (tbc)</li>
+                <li>Jan Hajič, Charles University, Czech Republic</li>
+                <li>Eva Hajičová, Charles University, Czech Republic</li>
+                <li>Yoshihiko Hayashi, Waseda University, Japan</li>
+                <li>Erhard Hinrichs, University of Tübingen, Germany</li>
+                <li>Shu Kai Hsieh, National Taiwan University, Taiwan</li>
+                <li>Chu-Ren Huang, Hong Kong Polytechnic University</li>
+                <li>Laura Kallmeyer, Düsseldorf University, Germany</li>
+                <li>Ekaterina Kochmar, MBZUAI, Abu Dhabi</li>
+                <li>Marie-Pauline Krielke, Saarbrücken, Germany</li>
+                <li>Sandra Kübler, Indiana University, USA</li>
+                <li>Lori Levin, Carnegie Mellon University, USA (tbc)</li>
+                <li>Wolfgang Menzel, Hamburg University, Germany</li>
+                <li>Marie Mikulová, Charles University, Czechia</li>
+                <li>Kaili Müürisep, University of Tartu, Estonia</li>
+                <li>John Nerbonne, Freiburg University, Germany</li>
+                <li>Joakim Nivre, Uppsala University, Sweden</li>
+                <li>Colleen Alena O'Brien, Palacky University, Czechia</li>
+                <li>Stephan Oepen, Oslo University, Norway</li>
+                <li>Petya Osenova, Bulgarian Academy of Sciences</li>
+                <li>Lilja Øvrelid, University of Oslo, Norway</li>
+                <li>Agnieszka Patejuk, Polish Academy of Sciences</li>
+                <li>Barbara Plank, LMU Munich, Germany</li>
+                <li>James Pustejovsky, Brandeis University, USA</li>
+                <li>Agata Savary, Université Paris-Saclay, France</li>
+                <li>Kiril Simov, Bulgarian Academy of Sciences</li>
+                <li>Sanghoun Song, Korea University, Korea</li>
+                <li>Sara Stymne, Uppsala University, Sweden</li>
+                <li>Gertjan Van Noord, Rijksuniversiteit Groningen, NL</li>
+                <li>Leonie Weissweiler, Uppsala University, Sweden</li>
+                <li>Shuly Wintner, Haifa University, Israel</li>
+                <li>Alina Wróblewska, Polish Academy of Sciences</li>
+                <li>Nianwen Xue, Brandeis University, USA</li>
+                <li>Amir Zeldes, Georgetown University, USA</li>
+                <li>Dan Zeman, Charles University, Czech Republic</li>
+                <li>Heike Zinsmeister, Hamburg University, Germany</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        &copy; 2026 SLiDE Workshop | LREC 2026
+    </footer>
+</div>
+</body>
+</html>
