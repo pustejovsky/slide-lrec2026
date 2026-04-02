@@ -1,238 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program - SLiDE Workshop @ LREC 2026</title>
-    <style>
-        /* Base styles matching your index.html */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #F9F9F9; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-        header { border-bottom: 2px solid #0056B3; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: #0056B3; margin-bottom: 5px; }
-        .subtitle { font-size: 1.2em; color: #555; font-weight: bold; }
-        .meta { color: #666; font-style: italic; }
-        nav { background: #eee; padding: 10px; border-radius: 5px; margin-bottom: 30px; }
-        nav a { margin-right: 15px; text-decoration: none; color: #0056B3; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        footer { text-align: center; font-size: 0.8em; color: #888; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; }
-        .banner-img { width: 100%; max-height: 250px; object-fit: cover; border-radius: 5px 5px 0 0; display: block; margin-bottom: 20px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program - SLiDE Workshop @ LREC 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Program specific styles */
-        h2 { border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #444; margin-top: 0; }
-        .date-header { background-color: #0056B3; color: white; padding: 10px 15px; border-radius: 4px; margin-bottom: 0; font-size: 1.2em; }
-        .program-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
-        .program-table th, .program-table td { padding: 15px; border-bottom: 1px solid #eee; vertical-align: top; }
-        .time-col { width: 120px; font-weight: bold; color: #555; white-space: nowrap; }
-        .session-row { background-color: #EEF7FF; border-bottom: 2px solid #CCE5FF; }
-        .session-title { font-weight: bold; color: #0056B3; font-size: 1.1em; }
-        .paper-title { font-weight: bold; color: #333; text-decoration: none; display: block; margin-bottom: 3px; }
-        .paper-title:hover { text-decoration: underline; color: #0056B3; }
-        .authors { font-style: italic; font-size: 0.95em; color: #444; }
-        .affiliations { font-size: 0.85em; color: #777; margin-top: 2px; }
-    </style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 20px 10px;
+    }
+    header img { max-width: 100%; height: auto; }
+    header h1 { font-size: 1.55rem; margin: 16px 0 4px; color: #1a1a4e; font-weight: bold; }
+    header p  { font-size: 0.92rem; color: #444; margin-bottom: 4px; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 12px 20px 18px;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      margin-top: 14px;
+    }
+    nav a { text-decoration: none; color: #1a1a8e; font-size: 0.95rem; }
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    main h2 { font-size: 1.35rem; color: #1a1a4e; margin-bottom: 6px; }
+    main h3 { font-size: 1rem; color: #333; margin: 24px 0 10px;
+               border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.91rem; }
+    td { padding: 7px 10px; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+    td.time {
+      white-space: nowrap;
+      width: 130px;
+      color: #555;
+      font-family: 'Courier New', monospace;
+      font-size: 0.84rem;
+      padding-top: 9px;
+    }
+
+    tr.section-hdr td {
+      background: #eef0f8;
+      font-weight: bold;
+      color: #1a1a4e;
+      border-top: 2px solid #b0b8d8;
+    }
+    tr.break-row td {
+      background: #fafafa;
+      color: #888;
+      font-style: italic;
+      font-size: 0.88rem;
+    }
+
+    /* Paper links open PDF in new tab */
+    a.paper-link {
+      color: #1a1a8e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.paper-link:hover { text-decoration: underline; color: #0000bb; }
+
+    .paper-authors { color: #555; font-size: 0.84rem; margin-top: 3px; }
+    .paper-affil   { color: #888; font-size: 0.80rem; }
+
+    ul.poster-list { list-style: disc; padding-left: 20px; }
+    ul.poster-list li { margin-bottom: 10px; }
+
+    footer {
+      text-align: center;
+      font-size: 0.80rem;
+      color: #aaa;
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="SLIDE-banner.png" alt="Workshop Banner" class="banner-img">
-            <h1>Workshop on Structured Linguistic Data and Evaluation (SLiDE)</h1>
-            <div class="subtitle">A full-day workshop at LREC 2026</div>
-            <div class="meta">May 11, 2026 | Palma, Mallorca (Spain)</div>
-        </header>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#topics">Topics</a>
-            <a href="index.html#dates">Important Dates</a>
-            <a href="index.html#submission">Submission</a>
-        </nav>
+<header>
+  <img src="https://www.slide-workshop.org/SLIDE-banner.png" alt="Workshop Banner" />
+  <h1>Workshop on Structured Linguistic Data and Evaluation (SLiDE)</h1>
+  <p>A full-day workshop at LREC 2026</p>
+  <p>May 11, 2026 &nbsp;|&nbsp; Palma, Mallorca (Spain)</p>
+</header>
 
-        <section id="program">
-            <h2>Workshop Program</h2>
-            
-            <h3 class="date-header">Monday, May 11, 2026</h3>
-            <table class="program-table">
-                <tbody>
-                    <tr class="session-row">
-                        <td class="time-col">09:00 - 09:10</td>
-                        <td><div class="session-title">Opening</div></td>
-                    </tr>
-                    <tr class="session-row">
-                        <td class="time-col">09:10 - 10:00</td>
-                        <td><div class="session-title">Keynote 1: Shira B. Wein, Amherst College</div></td>
-                    </tr>
-                    
-                    <tr class="session-row">
-                        <td class="time-col">10:00 - 10:30</td>
-                        <td><div class="session-title">Paper Session 1</div></td>
-                    </tr>
-                    <tr>
-                        <td class="time-col"></td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/13.html" target="_blank" class="paper-title">Degrees of Subjectivity and Their Repercussions in Conversation. The View from Online Interactions</a>
-                            <div class="authors">Gonzalo Freijedo Aduna, Anastasia Giannakidou, Alda Mari</div>
-                            <div class="affiliations">Institut Jean Nicod CNRS/ENS/EHESS/PSL University, The University of Chicago</div>
-                        </td>
-                    </tr>
+<nav>
+  <a href="https://www.slide-workshop.org/index.html">Home</a>
+  <a href="https://www.slide-workshop.org/index.html#about">About</a>
+  <a href="https://www.slide-workshop.org/index.html#topics">Topics</a>
+  <a href="https://www.slide-workshop.org/index.html#dates">Important Dates</a>
+  <a href="https://www.slide-workshop.org/index.html#submission">Submission</a>
+</nav>
 
-                    <tr class="session-row">
-                        <td class="time-col">10:30 - 11:00</td>
-                        <td><div class="session-title">Coffee Break 1</div></td>
-                    </tr>
+<main>
+  <h2>Workshop Program</h2>
+  <h3>Monday, May 11, 2026</h3>
 
-                    <tr class="session-row">
-                        <td class="time-col">11:00 - 13:00</td>
-                        <td><div class="session-title">Paper Session 2</div></td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">11:00 - 11:30</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/23.html" target="_blank" class="paper-title">Subevent Structure as a Predictor of Entity Identity Change in Procedural Text</a>
-                            <div class="authors">Kyeongmin Rim and James Pustejovsky</div>
-                            <div class="affiliations">Brandeis University</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">11:30 - 12:00</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/16.html" target="_blank" class="paper-title">Comparing Natural and Synthetic Structured Data: A Study of the Passive Verb Alternation in French and Italian</a>
-                            <div class="authors">Giuseppe Samo and Paola Merlo</div>
-                            <div class="affiliations">IDIAP, University of Geneva</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">12:00 - 12:30</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/22.html" target="_blank" class="paper-title">Constraints on Linking Element Choice in German Nominal Compounding: A Large-Scale Corpus Study</a>
-                            <div class="authors">Maksim Shmalts</div>
-                            <div class="affiliations">Tuebingen University</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">12:30 - 13:00</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/9.html" target="_blank" class="paper-title">Introducing corpora ANONYMIZED CORPUS-1 and CORPUS-2: Human Label Variation in Coreference and Discourse Relations</a>
-                            <div class="authors">Anna Nedoluzhko, Sarka Zikanova, Jiri Mirovsky, Eva Hajicova</div>
-                            <div class="affiliations">Charles University, Prague</div>
-                        </td>
-                    </tr>
+  <table>
 
-                    <tr class="session-row">
-                        <td class="time-col">13:00 - 14:00</td>
-                        <td><div class="session-title">Lunch Break</div></td>
-                    </tr>
+    <tr>
+      <td class="time">09:00 – 09:10</td>
+      <td>Opening</td>
+    </tr>
 
-                    <tr class="session-row">
-                        <td class="time-col">14:00 - 15:10</td>
-                        <td><div class="session-title">Poster Session</div></td>
-                    </tr>
-                    <tr>
-                        <td class="time-col"></td>
-                        <td>
-                            <ul style="padding-left: 20px; margin: 0;">
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/3.html" target="_blank" class="paper-title">Modular Neural Machine Translation with a Semantic Pivot - Pilot Study Using AMR</a>
-                                    <div class="authors">Wenyang Gao, Yaxuan Li, Yunxin Bao, Shulin Huang, Yue Zhang</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/5.html" target="_blank" class="paper-title">Gutenberg+: A More Temporally Faithful Corpus for Diachronic NLP</a>
-                                    <div class="authors">Leon Hammerla and Alexander Mehler</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/6.html" target="_blank" class="paper-title">Automatic Lemmatisation for Norwegian</a>
-                                    <div class="authors">Ahmet Yildirim, Kristin Hagen, Dag Haug</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/7.html" target="_blank" class="paper-title">Quantification in Abstract Meaning Representation</a>
-                                    <div class="authors">Kiyong Lee and Chongwon Park</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/8.html" target="_blank" class="paper-title">Improving Slovene Language Models for Lexicographic Question Answering through Continued Pretraining and Instruction Fine-Tuning</a>
-                                    <div class="authors">Timotej Knez and Slavko Zitnik</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/10.html" target="_blank" class="paper-title">Structured Partial Predictability in Non-Concatenative Morphology: The Case of Tashlhiyt Berber</a>
-                                    <div class="authors">John Alderete and Hamza Sellami</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/11.html" target="_blank" class="paper-title">Towards Corpus-Grounded Agentic LLMs for Multilingual Grammatical Analysis</a>
-                                    <div class="authors">Matej Klemen, Tjaša Arčon, Luka Terčon, Marko Robnik-Skonja, Kaja Dobrovoljc</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/20.html" target="_blank" class="paper-title">The L2 Network: A CEFR-Aligned Knowledge Graph for Grammar Domain Modeling</a>
-                                    <div class="authors">Luisa Ribeiro-Flucht and Xiaobin Chen</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/25.html" target="_blank" class="paper-title">Paraphrase Acquisition via Bilingual Pivoting Based on Neural Word Alignment</a>
-                                    <div class="authors">Risa Kondo, Seiji Sugiyama, Tomoyuki Kajiwara, Takashi Ninomiya</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/26.html" target="_blank" class="paper-title">Using syntax for the semantic representation of sentences</a>
-                                    <div class="authors">Iskandar Boucharenc, Eve Sauvage, Thomas Gerald, Julien Tourille, Sabrina Campano, Cyril Grouin, Sophie Rosset</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/27.html" target="_blank" class="paper-title">Modeling Word-Internal Structures: Morphological Segmentation Across 58 Languages</a>
-                                    <div class="authors">Vojtěch John, Zdeněk Žabokrtský, Benjamin Reeves</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/29.html" target="_blank" class="paper-title">DiNoS: Creating a Data-Driven German Noun Phrase Lexicon from Universal Dependencies</a>
-                                    <div class="authors">Jacob Lee Suchardt and Ronja Laarmann-Quante</div>
-                                </li>
-                                <li style="margin-bottom: 15px;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/30.html" target="_blank" class="paper-title">Figurative, Polysemous, Conventional: Designing a Dataset of Regular Metaphor</a>
-                                    <div class="authors">Anna Temerko, Marcos Garcia, Pablo Gamallo</div>
-                                </li>
-                                <li style="margin-bottom: 0;">
-                                    <a href="https://softconf.com/lrec2026/SLiDE/pub/program/31.html" target="_blank" class="paper-title">Domain-Specific Considerations in the Preparation of Specialized Corpora: A Case Study on a Corpus of German Sermons</a>
-                                    <div class="authors">Cora Haiber, Adam Roussel, Stefanie Dipper</div>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
+    <tr>
+      <td class="time">09:10 – 10:00</td>
+      <td>Keynote 1: <strong>Shira B. Wein</strong>, Amherst College</td>
+    </tr>
 
-                    <tr class="session-row">
-                        <td class="time-col">15:10 - 16:00</td>
-                        <td><div class="session-title">Keynote 2: Naiara Perez, University of the Basque Country</div></td>
-                    </tr>
+    <!-- ── Paper Session 1 ── -->
+    <tr class="section-hdr">
+      <td class="time">10:00 – 10:30</td>
+      <td>Paper Session 1</td>
+    </tr>
+    <tr>
+      <td class="time"></td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=13"
+           target="_blank">
+          Degrees of Subjectivity and Their Repercussions in Conversation.
+          The View from Online Interactions
+        </a>
+        <div class="paper-authors">Gonzalo Freijedo Aduna, Anastasia Giannakidou, Alda Mari</div>
+        <div class="paper-affil">Institut Jean Nicod CNRS/ENS/EHESS/PSL University &amp; The University of Chicago</div>
+      </td>
+    </tr>
 
-                    <tr class="session-row">
-                        <td class="time-col">16:00 - 16:30</td>
-                        <td><div class="session-title">Coffee Break 2</div></td>
-                    </tr>
+    <tr class="break-row">
+      <td class="time">10:30 – 11:00</td>
+      <td>☕ Coffee Break</td>
+    </tr>
 
-                    <tr class="session-row">
-                        <td class="time-col">16:30 - 17:30</td>
-                        <td><div class="session-title">Paper Session 3</div></td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">16:30 - 17:00</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/21.html" target="_blank" class="paper-title">Semantic, Syntactic, Lexical: What Makes QA Augmentation Work in Limited Quantity?</a>
-                            <div class="authors">Benedictus Kent Rachmat, Thomas Gerald, Takuya Nakamura, Zheng Zhang, Cyril Grouin</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="time-col">17:00 - 17:30</td>
-                        <td>
-                            <a href="https://softconf.com/lrec2026/SLiDE/pub/program/28.html" target="_blank" class="paper-title">Fast and Flexible Example-based Treebank Search with Vector Symbolic Architectures</a>
-                            <div class="authors">Adam Roussel</div>
-                            <div class="affiliations">Ruhr University Bochum</div>
-                        </td>
-                    </tr>
+    <!-- ── Paper Session 2 ── -->
+    <tr class="section-hdr">
+      <td class="time">11:00 – 13:00</td>
+      <td>Paper Session 2</td>
+    </tr>
 
-                    <tr class="session-row" style="background-color: #f1f1f1;">
-                        <td class="time-col">17:30 - 18:00</td>
-                        <td><div class="session-title">Closing Discussion</div></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <tr>
+      <td class="time">11:00 – 11:30</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=26"
+           target="_blank">
+          Subevent Structure as a Predictor of Entity Identity Change in Procedural Text
+        </a>
+        <div class="paper-authors">Kyeongmin Rim and James Pustejovsky</div>
+        <div class="paper-affil">Brandeis University</div>
+      </td>
+    </tr>
 
-        <footer>
-            &copy; 2026 SLiDE Workshop | LREC 2026
-        </footer>
-    </div>
+    <tr>
+      <td class="time">11:30 – 12:00</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=38"
+           target="_blank">
+          Comparing Natural and Synthetic Structured Data: A Study of the Passive Verb
+          Alternation in French and Italian
+        </a>
+        <div class="paper-authors">Giuseppe Samo and Paola Merlo</div>
+        <div class="paper-affil">IDIAP, University of Geneva</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="time">12:00 – 12:30</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=51"
+           target="_blank">
+          Constraints on Linking Element Choice in German Nominal Compounding:
+          A Large-Scale Corpus Study
+        </a>
+        <div class="paper-authors">Maksim Shmalts</div>
+        <div class="paper-affil">Tuebingen University</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="time">12:30 – 13:00</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=76"
+           target="_blank">
+          Introducing corpora Hlava Cor and Hlava AD: Human Label Variation
+          in Coreference and Discourse Relations
+        </a>
+        <div class="paper-authors">Anna Nedoluzhko, Šárka Zikánová, Jiří Mírovský, Eva Hajičová</div>
+        <div class="paper-affil">Charles University, Prague</div>
+      </td>
+    </tr>
+
+    <tr class="break-row">
+      <td class="time">13:00 – 14:00</td>
+      <td>🍽 Lunch Break</td>
+    </tr>
+
+    <!-- ── Poster Session ── -->
+    <tr class="section-hdr">
+      <td class="time">14:00 – 15:10</td>
+      <td>Poster Session</td>
+    </tr>
+    <tr>
+      <td class="time"></td>
+      <td>
+        <ul class="poster-list">
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=87"
+               target="_blank">
+              Modular Neural Machine Translation with a Semantic Pivot – Pilot Study Using AMR
+            </a>
+            <div class="paper-authors">Wenyang Gao, Yaxuan Li, Yunxin Bao, Shulin Huang, Yue Zhang</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=99"
+               target="_blank">
+              Gutenberg+: A More Temporally Faithful Corpus for Diachronic NLP
+            </a>
+            <div class="paper-authors">Leon Hammerla and Alexander Mehler</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=106"
+               target="_blank">
+              Automatic Lemmatisation for Norwegian
+            </a>
+            <div class="paper-authors">Ahmet Yıldırım, Kristin Hagen, Dag Haug</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=117"
+               target="_blank">
+              Quantification in Abstract Meaning Representation
+            </a>
+            <div class="paper-authors">Kiyong Lee and Chongwon Park</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=127"
+               target="_blank">
+              Improving Slovene Language Models for Lexicographic Question Answering
+              through Continued Pretraining and Instruction Fine-Tuning
+            </a>
+            <div class="paper-authors">Timotej Knez and Slavko Žitnik</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=137"
+               target="_blank">
+              Structured Partial Predictability in Non-Concatenative Morphology:
+              The Case of Tashlhiyt Berber
+            </a>
+            <div class="paper-authors">John Alderete and Hamza Sellami</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=149"
+               target="_blank">
+              Towards Corpus-Grounded Agentic LLMs for Multilingual Grammatical Analysis
+            </a>
+            <div class="paper-authors">Matej Klemen, Tjaša Arčon, Luka Terčon, Marko Robnik-Šikonja, Kaja Dobrovoljc</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=161"
+               target="_blank">
+              The L2 Network: A CEFR-Aligned Knowledge Graph for Grammar Domain Modeling
+            </a>
+            <div class="paper-authors">Luisa Ribeiro-Flucht and Xiaobin Chen</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=173"
+               target="_blank">
+              Paraphrase Acquisition via Bilingual Pivoting Based on Neural Word Alignment
+            </a>
+            <div class="paper-authors">Risa Kondo, Seiji Sugiyama, Tomoyuki Kajiwara, Takashi Ninomiya</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=182"
+               target="_blank">
+              Using syntax for the semantic representation of sentences
+            </a>
+            <div class="paper-authors">Iskandar Boucharenc, Eve Sauvage, Thomas Gerald, Julien Tourille,
+              Sabrina Campano, Cyril Grouin, Sophie Rosset</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=193"
+               target="_blank">
+              Modeling Word-Internal Structures: Morphological Segmentation Across 58 Languages
+            </a>
+            <div class="paper-authors">Vojtěch John, Zdeněk Žabokrtský, Benjamin Reeves</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=204"
+               target="_blank">
+              DiNoS: Creating a Data-Driven German Noun Phrase Lexicon from Universal Dependencies
+            </a>
+            <div class="paper-authors">Jacob Lee Suchardt and Ronja Laarmann-Quante</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=215"
+               target="_blank">
+              Figurative, Polysemous, Conventional: Designing a Dataset of Regular Metaphor
+            </a>
+            <div class="paper-authors">Anna Temerko, Marcos Garcia, Pablo Gamallo</div>
+          </li>
+
+          <li>
+            <a class="paper-link"
+               href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=225"
+               target="_blank">
+              Domain-Specific Considerations in the Preparation of Specialized Corpora:
+              A Case Study on a Corpus of German Sermons
+            </a>
+            <div class="paper-authors">Cora Haiber, Adam Roussel, Stefanie Dipper</div>
+          </li>
+
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="time">15:10 – 16:00</td>
+      <td>Keynote 2: <strong>Naiara Perez</strong>, University of the Basque Country</td>
+    </tr>
+
+    <tr class="break-row">
+      <td class="time">16:00 – 16:30</td>
+      <td>☕ Coffee Break</td>
+    </tr>
+
+    <!-- ── Paper Session 3 ── -->
+    <tr class="section-hdr">
+      <td class="time">16:30 – 17:30</td>
+      <td>Paper Session 3</td>
+    </tr>
+
+    <tr>
+      <td class="time">16:30 – 17:00</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=237"
+           target="_blank">
+          Semantic, Syntactic, Lexical: What Makes QA Augmentation Work in Limited Quantity?
+        </a>
+        <div class="paper-authors">Benedictus Kent Rachmat, Thomas Gerald, Takuya Nakamura,
+          Zheng Zhang, Cyril Grouin</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="time">17:00 – 17:30</td>
+      <td>
+        <a class="paper-link"
+           href="https://pustejovsky.github.io/slide-lrec2026/book.pdf#page=250"
+           target="_blank">
+          Fast and Flexible Example-based Treebank Search with Vector Symbolic Architectures
+        </a>
+        <div class="paper-authors">Adam Roussel</div>
+        <div class="paper-affil">Ruhr University Bochum</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="time">17:30 – 18:00</td>
+      <td>Closing Discussion</td>
+    </tr>
+
+  </table>
+</main>
+
+<footer>© 2026 SLiDE Workshop | LREC 2026</footer>
+
 </body>
 </html>
